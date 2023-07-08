@@ -69,6 +69,7 @@ consul_log_rotate_max_files: "{{ lookup('env','CONSUL_LOG_ROTATE_MAX_FILES') | d
 consul_syslog_enable: "{{ lookup('env','CONSUL_SYSLOG_ENABLE') | default(false, true) }}"
 consul_syslog_facility: "{{ lookup('env','CONSUL_SYSLOG_FACILITY') | default('local0', true) }}"
 consul_configure_syslogd: "{{ lookup('env','CONSUL_CONFIGURE_SYSLOGD') | default(false, true) }}"
+consul_log_via_systemd: "{{ lookup('env','CONSUL_LOG_VIA_SYSTEMD') | default(true, true) }}"
 
 ### Consul settings
 consul_datacenter: "{{ lookup('env','CONSUL_DATACENTER') | default('dc1', true) }}"

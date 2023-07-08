@@ -38,6 +38,7 @@
     - ansible_os_family != 'Windows'
     - not consul_syslog_enable | bool
     - not consul_configure_syslogd | bool
+    - not consul_log_via_systemd | bool
 
 - name: Create log directory
   file:
@@ -54,6 +55,7 @@
     - ansible_os_family != 'Windows'
     - consul_syslog_enable | bool
     - consul_configure_syslogd | bool
+    - not consul_log_via_systemd | bool
 
 - name: Verify binary path
   file:
